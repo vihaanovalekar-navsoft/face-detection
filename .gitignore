@@ -1,0 +1,35 @@
+# Python caches & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+
+# Large unused models in buffalo_l (>130MB unused files)
+models/buffalo_l/1k3d68.onnx
+models/buffalo_l/2d106det.onnx
+models/buffalo_l/genderage.onnx
+models/buffalo_l/det_10g.onnx
+models/*.zip
+
+# Keep essential models tracked in git (w600k_r50.onnx tracked via Git LFS)
+!models/yolov11n-face.pt
+!models/scrfd_10g_bnkps.onnx
+!models/2.7_80x80_MiniFASNetV2.pth
+!models/buffalo_l/w600k_r50.onnx
+
+# Database & biometric images / gallery (strictly excluded from git for privacy)
+data/
+outputs/
+
+# Local secrets & OS artifacts
+.env
+.env.*
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.env
+.git
+.gitignore
+.gemini
+tests/__pycache__
+src/**/__pycache__
+

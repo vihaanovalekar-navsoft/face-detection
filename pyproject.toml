@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "face-engine"
+version = "0.1.0"
+description = "Real-time face detection, alignment, embedding, multi-angle enrollment and live identification engine."
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics>=8.3",
+    "onnxruntime-gpu>=1.18",
+    "torch>=2.1",
+    "torchvision>=0.16",
+    "opencv-python>=4.9",
+    "Pillow>=10.0",
+    "numpy>=1.26",
+    "streamlit>=1.30",
+    "streamlit-webrtc>=0.79",
+    "av>=17.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

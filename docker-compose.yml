@@ -1,0 +1,14 @@
+services:
+  face-engine:
+    build: .
+    container_name: face-engine
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data/enrolled:/app/data/enrolled
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+
